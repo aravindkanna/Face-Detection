@@ -14,7 +14,7 @@ Original    Integral
 
 '''
 class IntegralImage:
-
+    
     def __init__(self, imageSrc, label):
         self.original = np.array(Image.open(imageSrc))
         self.sum = 0

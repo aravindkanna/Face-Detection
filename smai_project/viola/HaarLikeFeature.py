@@ -2,6 +2,11 @@
 def enum(**enums):
     return type('Enum', (), enums)
 
+#TWO_VERTICAL = (1,2) means 1 row  2 columns
+#TWO_HORIZONTAL = (2,1) means 2 rows 1 columns
+#THREE_HORIZONTAL = (1,3) means 1 row  3 columns
+#THREE_VERTICAL = (3,1) means 3 rows 1 columns
+#FOUR = (2,2) means 2 rows 2 columns
 FeatureType = enum(TWO_VERTICAL = (1,2), TWO_HORIZONTAL = (2,1), THREE_HORIZONTAL = (3,1), THREE_VERTICAL = (1,3), FOUR = (2,2))
 FeatureTypes = [FeatureType.TWO_VERTICAL, FeatureType.TWO_HORIZONTAL, FeatureType.THREE_VERTICAL, FeatureType.THREE_HORIZONTAL, FeatureType.FOUR]
 
@@ -58,7 +63,6 @@ class HaarLikeFeature(object):
             # bottom right area
             fourth = intImage.get_area_sum((self.top_left[0] + self.width/2, self.top_left[1] + self.height/2), self.bottom_right)
             score = first - second - third + fourth
-	print(score)
         return score
     
     def get_vote(self, intImage):

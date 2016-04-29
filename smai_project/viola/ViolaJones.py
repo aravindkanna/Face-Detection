@@ -20,18 +20,18 @@ if __name__ == "__main__":
     # TODO: attentional cascading
     
     print 'Loading faces..'
-    faces = load_images('../../../../../trainingdata/faces', 1)
+    faces = load_images('../trainingdata/faces', 1)
     print '..done. ' + str(len(faces)) + ' faces loaded.\n\nLoading non faces..'
-    non_faces = load_images('../../../../../trainingdata/nonfaces', -1)
+    non_faces = load_images('../trainingdata/nonfaces', -1)
     print '..done. ' + str(len(non_faces)) + ' non faces loaded.\n'
     
     T = 20
     classifiers = learn(faces, non_faces, T)
     
     print 'Loading test faces..'
-    faces = load_images('../../../../../trainingdata/faces/test/faces', 1)
+    faces = load_images('../trainingdata/faces/test/faces', 1)
     print '..done. ' + str(len(faces)) + ' faces loaded.\n\nLoading test non faces..'
-    non_faces = load_images('../../../../../trainingdata/nonfaces/test/non-face', -1)
+    non_faces = load_images('../trainingdata/nonfaces/test/non-face', -1)
     print '..done. ' + str(len(non_faces)) + ' non faces loaded.\n'
     
     print 'Validating selected classifiers..'
